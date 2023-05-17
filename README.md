@@ -1,1 +1,1 @@
-# DjangoProjectTreding
+# DjangoProjectTrading
