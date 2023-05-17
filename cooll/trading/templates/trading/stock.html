@@ -1,0 +1,42 @@
+{% extends 'trading/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+{% if user.is_authenticated %}
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ stockForm }}
+    </table>
+    <input type="submit" value="Сохранить">
+</form>
+{% endif %}
+
+{% if stock.count > 0 %}
+<table class="table">
+    <caption><b>Складское</b></caption>
+     <tr>
+        <th>Номер</th>
+        <th>Поставщик</th>
+        <th>Товар</th>
+        <th>Цена</th>
+        <th>Количество на скалде</th>
+         <th>Дата</th>
+    </tr>
+{% for s in stock %}
+    <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.provider }}</td>
+        <td>{{ s.goods }}</td>
+        <td>{{ s.price }}</td>
+        <td>{{ s.quantityGoods }}</td>
+        <td>{{ s.time_create }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+    <h1>Нет записей в таблице склад</h1>
+{% endif %}
+
+{% endblock %}

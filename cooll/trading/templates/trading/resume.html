@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Резюме</title>
+    <link rel="stylesheet" href="{% static 'trading/css/styles.css' %}" />
+</head>
+<body>
+<div class="resume-page">
+<form method="POST" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+    <h1 class="form-title">Резюме</h1>
+    <table class="form-group">
+        <lable class="form-lables">{{ form }}</lable>
+    </table>
+    <input type="submit" value="Отправить">
+</form>
+</div>
+</body>
+</html>

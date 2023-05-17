@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns:list-style-type="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+	<link rel="icon" href="{% static 'trading/img/icon.png' %}">
+	<link rel="stylesheet" href="{% static 'trading/css/styles.css' %}" />
+</head>
+<body>
+<div class="page">
+	<div class="main-menu">
+			{% for m in menu %}
+			<a href="{% url 'home' %}"></a>
+						<ul class="list">
+							<li ><a href="{% url m.url_name %}" class="button">{{m.title}}
+								<span class="button__line button__line--top"></span>
+								<span class="button__line button__line--right"></span>
+								<span class="button__line button__line--bottom"></span>
+								<span class="button__line button__line--left"></span>
+							</a></li>
+						</ul>
+		{% endfor %}
+	</div>
+
+	{% block content %}
+
+	{% endblock %}
+
+	{% block footer %}
+		<footer>
+			<nav>
+				<a href="{% url 'home' %}">Главная</a>
+				<a href="{% url 'contacts' %}">Контакты</a>
+				<a href="{% url 'vacancies' %}">Вакансии</a>
+				<a href="{% url 'goods' %}">Товары и услуги</a>
+				<a href="{% url 'stock' %}">Склад</a>
+				<a href="{% url 'private_office' %}">Личный кабинет</a>
+			</nav>
+			<div class="logo">
+				<a href="{% url 'home' %}"><img src="{% static 'trading/img/icon.png' %}" alt="Логотип"></a>
+			</div>
+			<div class="connection">
+				<a href="#"><img src="{% static 'trading/img/phone.png' %}" alt="телефон"></a>
+				<a href="#"><img src="{% static 'trading/img/envelope.png' %}" alt="почта"></a>
+			</div>
+			<p>Web Developer 2023</p>
+		</footer>
+	{% endblock %}
+
+</div>
+</body>
+</html>

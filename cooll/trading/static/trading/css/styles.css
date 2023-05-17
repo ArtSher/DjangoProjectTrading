@@ -1,0 +1,444 @@
+body {
+    height: 100%;
+    margin:0;
+    padding:0;
+    font-family: Thoma;
+    background: url('../img/fon.png') no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.page {
+    display: flex; /* Делаем страницу flex box контейнером */
+    flex-direction: column; /* Каждый элемент flex box контейнера шел друг за другом */
+    height: 100vh; /* Минимальная высота страницы занимает все пространство нашего обзора */
+
+}
+
+/* Отображаем главное меню на странице */
+.main-menu {
+    /* Определяем модель flex box для блока menu */
+    display: flex;
+    flex-decoration: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+/* Стилизуем кнопки главного меню, добовляем градиент */
+.button {
+    position: relative;
+    display: flex;
+    padding: 15px 30px;
+    color: #2196f3;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    transition: 0.25s;
+
+}
+.button__line {
+    position: absolute;
+    display:block;
+}
+.button__line--top {
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+}
+.button:hover .button__line--top {
+    left:100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+.button__line--bottom {
+    bottom:0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+.button:hover .button__line--bottom {
+    right:100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+.button__line--left {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+}
+.button:hover .button__line--left {
+    button: 100%;
+    transition: 1s;
+    transition-delay: 0;
+}
+.button__line--right {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+}
+.button:hover .button__line--right {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0;
+}
+.button:hover {
+    box-shadow: 0 0 10px #2196f3;
+    transition: 1s;
+    transition-delay: 0.25s;
+    background-color: #2196f3;
+    color: #333
+}
+
+
+/* Во вкладке контакты, прописываем стили для наших карточек */
+.card {
+   width: 400px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: white;
+   box-shadow: 0 1px 15px #333;
+   border-radius: 10px;
+   padding: 10px;
+
+}
+
+.card-photo {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-size: 20px;
+    text-align: center;
+    color: #1b0783;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #1b0783;
+    padding: 12px;
+    color: #484033;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    padding: 8px;
+    color: #1b0783;
+}
+
+.card-list {
+    font-size: 14px;
+    color: #484033;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+
+/* Стилизуем главную страницу  */
+.content  {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.img-content {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.img-content img {
+    padding: 15px;/*делаем рамку каждой картинке*/
+    background: #666;/*цвет рамки*/
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: 1s;/*Время эффекта. Сколько по времени будет увеличиваться картинка*/
+
+}
+
+.img-content img:hover {
+    /* При наведении на изображение, оно будет увеличиваться на 20%*/
+    transform: scale(1.2);
+}
+
+
+/* Стилизуем футер */
+footer {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    background: #000;
+    margin: 0 auto;
+    margin-top: auto;
+    text-align: center;
+    padding-top: 25px;
+}
+
+footer p {
+    color: white;
+    margin-bottom: 0px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+footer nav a:hover {
+    border-bottom: 1px solid white;
+}
+
+.logo img {
+   width: 100px;
+   height: 100px;
+   padding: 10px;
+   border-radius: 50px;
+}
+
+.connection img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-left: 10px;
+}
+
+.connection img:hover {
+   background: #2196f3;
+}
+
+
+/* Стилизуем кнопку на странице вакансии*/
+.resumeform {
+ height: 100%;
+ margin-bottom: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.butt {
+ border: 3px solid #218294;
+ color: #218294;
+ text-decoration: none;
+ text-transform: uppercase;
+ width: 250px;
+ height: 60px;
+ display: block;
+ text-align: center;
+ line-height: 60px;
+ font-family: Arial, sans-serif;
+ position: relative;
+ transition: .5s;
+ overflow: hidden;
+}
+.butt::before,
+.butt::after {
+ position: absolute;
+ content: '';
+ width: 100%;
+ height: 100%;
+ background: #218294;
+ top: 0;
+ left: -100%;
+ opacity: .5;
+ transition: .3s;
+ z-index: -1;
+}
+.butt::after {
+ opacity: 1;
+ transition-delay: .2s;
+}
+.butt:hover {
+ color: #fff;
+}
+.butt:hover::before,
+.butt:hover::after {
+ left: 0;
+}
+
+
+/* Стилизуем HTML страницу resume */
+.resume-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #ccc;
+    letter-spacing: 1px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-lables {
+   position: absolute;
+   top: 0;
+   z-index: -1;
+   transition: 0.3s;
+}
+
+.form-input {
+    width: 100%;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: transparent;
+    outline: none;
+}
+
+
+/* Стилизуем таблицы на странице goods */
+.table {
+	width: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+}
+.table caption {
+    padding: 10px;
+    font-size: 20px;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+
+/* Стилизуем формы на странице goods */
+.goodsForm {
+    margin-left: 50px;
+}
+.goodsForm table {
+    padding: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+
+/* Стилизуем страницу Личный кабинет */
+
+.office-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.private_office {
+    height: 260px;
+    weight: 200px;
+    box-shadow: 0 1px 15px #333;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.private_office-title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.loginForm {
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    font-size: 16px;
+}
+
+.form-button{
+    min-weight: 60px;
+    height: 50px;
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    cursor: pointer;
+    color: black;
+    background: #2196f3;
+}
+
+.form-button:hover{
+    box-shadow: 0 1px 15px #333;
+}
+
+.form-link {
+    margin-left: 10px;
+    padding: 2px;
+    text-decoration: none;
+    outline: none;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 3;
+    color: black;
+    border-radius: 5px;
+    background: #2196f3;
+    border:  2px solid black;
+}
+.form-link a:link, a:visited, a:focus {
+  background: yellow;
+}
+.form-link a:hover {
+  background: orange;
+}
+
+
+.form-link-exit {
+    margin-top 50px;
+    margin-left: 120px;
+    padding: 10px;
+    text-decoration: none;
+    outline: none;
+    font-family: inherit;
+    line-height: 3;
+    color: black;
+    background: #2196f3;
+    border-radius: 5px;
+    border: 2px solid black;
+
+}

@@ -1,0 +1,66 @@
+{% extends 'trading/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+{% if user.is_authenticated %}
+<form method="POST" class="goodsForm">
+    {% csrf_token %}
+    <table>
+        {{ providerForm }}
+    </table>
+    <input type="submit" value="Добавить поставщика" >
+</form>
+{% endif %}
+
+{% if provider.count > 0 %}
+<table class="table">
+    <caption><b>Список поставщиков</b></caption>
+    <tr>
+        <th>Номер</th>
+        <th>Поставщик</th>
+    </tr>
+{% for p in provider %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.companyName }}</td>
+        <td><a href="edit_provider/{{ p.id }}">Изменить</a> | <a href="delete_provider/{{ p.id }}">Удалить</a></td>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+    <h1>Нет записей в таблице поставщики</h1>
+{% endif %}
+
+{% if user.is_authenticated %}
+<form method="POST" action="create_goods" class="goodsForm">
+    {% csrf_token %}
+    <table>
+        {{ goodsForm }}
+    </table>
+    <input type="submit" value="Добавить товар">
+</form>
+{% endif %}
+
+{% if goods.count > 0 %}
+<table class="table">
+    <caption><b>Список товаров</b></caption>
+    <tr>
+        <th>Номер</th>
+        <th>Наименование продукта</th>
+        <th>Описание продукта</th>
+    </tr>
+{% for g in goods %}
+    <tr>
+        <td>{{ g.id }}</td>
+        <td>{{ g.nameGoods }}</td>
+        <td>{{ g.descriptionGoods }}</td>
+        <td><a href="edit_goods/{{ g.id }}">Изменить</a> | <a href="delete_goods/{{ g.id }}">Удалить</a></td>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+    <h1>Нет записей в таблице товары</h1>
+{% endif %}
+
+{% endblock %}

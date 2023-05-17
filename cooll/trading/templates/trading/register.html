@@ -1,0 +1,13 @@
+{% extends 'trading/base.html' %}
+
+{% block content %}
+
+<h1>Регистрация пользователя</h1>
+<form method="POST">
+    {% csrf_token %}
+<table>
+    {{ userCreationForm }}
+</table>
+<input type="submit" class="form-button" value="Регистрация">
+</form>
+{% endblock %}
